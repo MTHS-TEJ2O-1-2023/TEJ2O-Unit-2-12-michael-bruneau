@@ -59,7 +59,7 @@ np = neopixel.NeoPixel(pin16, 5)
 
 # setup
 display.clear
-display.shwo(Image.HAPPY)
+display.show(Image.HAPPY)
 np[0] = (0, 0, 0)
 np[1] = (0, 0, 0)
 np[2] = (0, 0, 0)
