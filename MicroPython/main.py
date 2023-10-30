@@ -66,11 +66,14 @@ np[2] = (0, 0, 0)
 np[3] = (0, 0, 0)
 np.show()
 
+# loop
 while True:
     if button_a.is_pressed():
         display.clear()
+        # detects distance from object
         distance = sonar.distance_mm() / 10
         display.show(distance)
+        # if distance from object is less then 10 light neopixels red
         if distance < 10:
             np[0] = (255, 0, 0)
             np[1] = (255, 0, 0)
@@ -83,6 +86,7 @@ while True:
             np[2] = (0, 0, 0)
             np[3] = (0, 0, 0)
         else:
+            # if distance from object is greater then 10 light neopixels green
             np[0] = (0, 255, 0)
             np[1] = (0, 255, 0)
             np[2] = (0, 255, 0)
