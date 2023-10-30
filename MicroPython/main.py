@@ -6,11 +6,6 @@ This module is a Micro:bit MicroPython program
 
 from microbit import *
 import neopixel
-"""
-Created by: Michael Bruneau
-Created on: Oct 2023
-This module is a Micro:bit MicroPython program
-"""
 
 
 class HCSR04:
@@ -48,16 +43,14 @@ class HCSR04:
             try:
                 k, value = next(
                     (ind, v)
-                    for ind, v in enumerate(resp[i: length - 2])
+                    for ind, v in enumerate(resp[i : length - 2])
                     if resp[i + ind + 1] == 0
                 )
                 post = bin(value).count("1") if k else 0
                 k = k + i
             except StopIteration:
                 i = -1
-        dist = - \
-            1 if i < 0 else round(
-                ((pre + (k - i) * 8.0 + post) * 8 * 0.172) / 2)
+        dist = -1 if i < 0 else round(((pre + (k - i) * 8.0 + post) * 8 * 0.172) / 2)
         return dist
 
 
@@ -72,3 +65,9 @@ np[1] = (0, 0, 0)
 np[2] = (0, 0, 0)
 np[3] = (0, 0, 0)
 np.show()
+
+while True:
+    if button_a.is_pressed():
+        display.clear()
+        distance = sonar.distance_mm() / 10
+        display.show(distance)
