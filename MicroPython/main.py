@@ -71,7 +71,7 @@ while True:
     if button_a.is_pressed():
         display.clear()
         # detects distance from object
-        distance = sonar.distance_mm() / 10
+        distance = HCSR04.distance_mm() / 10
         display.show(distance)
         # if distance from object is less then 10 light neopixels red
         if distance < 10:
