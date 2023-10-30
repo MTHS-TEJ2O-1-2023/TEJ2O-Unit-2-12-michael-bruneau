@@ -96,4 +96,3 @@ while True:
         np.show()
         sleep(1000)
         display.show(Image.HAPPY)
-
