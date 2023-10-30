@@ -21,23 +21,38 @@ basic.showIcon(IconNames.Happy)
 
 input.onButtonPressed(Button.A, function () {
   basic.clearScreen()
+  // detcect distance from object
   distanceToObject = sonar.ping(
     DigitalPin.P1,
     DigitalPin.P2,
     PingUnit.Centimeters
   )
+
+  // if distance from object is less than 10 cm show light neopixels to red
   if (distanceToObject < 10) {
     neopixelStrip.setPixelColor(0, neopixel.colors(NeoPixelColors.Red))
     neopixelStrip.setPixelColor(1, neopixel.colors(NeoPixelColors.Red))
     neopixelStrip.setPixelColor(2, neopixel.colors(NeoPixelColors.Red))
     neopixelStrip.setPixelColor(3, neopixel.colors(NeoPixelColors.Red))
+    basic.pause(1000)
+    neopixelStrip.setPixelColor(0, neopixel.colors(NeoPixelColors.Black))
+    neopixelStrip.setPixelColor(1, neopixel.colors(NeoPixelColors.Black))
+    neopixelStrip.setPixelColor(2, neopixel.colors(NeoPixelColors.Black))
+    neopixelStrip.setPixelColor(3, neopixel.colors(NeoPixelColors.Black))
   } else {
+    // if distance from object is greater than 10 cm show light neopixels to green
     neopixelStrip.setPixelColor(0, neopixel.colors(NeoPixelColors.Green))
     neopixelStrip.setPixelColor(1, neopixel.colors(NeoPixelColors.Green))
     neopixelStrip.setPixelColor(2, neopixel.colors(NeoPixelColors.Green))
     neopixelStrip.setPixelColor(3, neopixel.colors(NeoPixelColors.Green))
+      basic.pause(1000)
+      neopixelStrip.setPixelColor(0, neopixel.colors(NeoPixelColors.Black))
+      neopixelStrip.setPixelColor(1, neopixel.colors(NeoPixelColors.Black))
+      neopixelStrip.setPixelColor(2, neopixel.colors(NeoPixelColors.Black))
+      neopixelStrip.setPixelColor(3, neopixel.colors(NeoPixelColors.Black))
   }
   neopixelStrip.show()
+  // reset
   basic.showNumber(distanceToObject)
   basic.showIcon(IconNames.Happy)
 })
