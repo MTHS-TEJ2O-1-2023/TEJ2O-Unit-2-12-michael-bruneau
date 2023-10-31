@@ -103,6 +103,12 @@
                 <mxCell id="24" value="show neopixels&lt;br&gt;pause 1 second&amp;nbsp;&lt;br&gt;display happy facxe" style="shape=parallelogram;html=1;strokeWidth=2;perimeter=parallelogramPerimeter;whiteSpace=wrap;rounded=1;arcSize=12;size=0.23;" vertex="1" parent="1">
                     <mxGeometry x="300" y="1070" width="220" height="100" as="geometry"/>
                 </mxCell>
+                <mxCell id="41" value="True" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="445" y="495" width="50" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="42" value="False" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="335" y="580" width="50" height="30" as="geometry"/>
+                </mxCell>
             </root>
         </mxGraphModel>
     </diagram>
